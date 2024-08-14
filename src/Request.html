@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a New Artist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            color: #e2d05f;
+            margin-bottom: 20px;
+        }
+        .form-control, .form-select, .btn {
+            background-color: #282828;
+            color: #ffffff;
+            border: 2px solid #e2d05f;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .btn {
+            margin-top: 10px;
+            font-size: 18px;
+            background-color: #e2d05f;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #dacf89;
+            transform: translateY(-2px);
+        }
+        a {
+            text-decoration: none;
+            color: #e2d05f;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #dcd291;
+        }
+    </style>
+</head>
+<body>
+
+<h2>REQUEST A NEW ARTIST</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8"> <!-- Adjust the width here -->
+            <form id="artistForm" action="https://httpbin.org/post" method="post" onsubmit="return Validate()">
+                <div class="mb-3">
+                    <label for="artistName" class="form-label">Artist’s Name:</label>
+                    <input type="text" class="form-control" id="artistName" name="artistName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="musicGenre" class="form-label">Music Genre:</label>
+                    <input list="genres" class="form-control" id="musicGenre" name="musicGenre" required>
+                    <datalist id="genres">
+                        <option value="Folk"></option>
+                        <option value="Beats"></option>
+                        <option value="Jazz"></option>
+                        <option value="Rock"></option>
+                        <option value="Hip-Hop"></option>
+                        <option value="Classical"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="socialMedia" class="form-label">Social Media URLs (one per line):</label>
+                    <textarea class="form-control" id="socialMedia" name="socialMedia" rows="3" placeholder="https://example1.com\nhttps://example2.com" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="songVideos" class="form-label">Example Song/Video URLs:</label>
+                    <div id="songVideoContainer">
+                        <input type="url" class="form-control mb-2" id="songVideos" name="songVideos" placeholder="https://example.com">
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="addSongVideoBtn">Add Another URL</button>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="explicitLyrics" name="explicitLyrics">
+                    <label class="form-check-label" for="explicitLyrics">Includes explicit lyrics</label>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Explain why should we add this artist:</label>
+                    <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+            <a href="./index.html">BACK TO HOME</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/Request.js"></script>
+</body>
+</html>
