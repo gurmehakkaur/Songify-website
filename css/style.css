@@ -65,37 +65,36 @@
   color: #333; 
 }
 
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   #apptitle {
     font-size: 30px;
-    text-align: center; /* Center title on mobile */
+    text-align: center;
   }
 
   .cardContainer {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Stack cards vertically on small screens */
-    gap: 20px; /* Reduce gap between cards */
-    padding: 10px; /* Reduce padding */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 10px;
   }
 
   .card {
-    padding: 15px; /* Reduce padding inside cards */
+    padding: 15px;
   }
 
   .card-image {
-    height: 150px; /* Reduce image height */
+    height: 150px;
   }
 
   .card h3 {
-    font-size: 1.2em; /* Adjust title font size */
+    font-size: 1.2em;
   }
 
   .card year,
   .card length {
-    font-size: 0.8em; /* Adjust text font size */
+    font-size: 0.8em;
   }
 
   .card songname {
-    font-size: 1em; /* Adjust font size for song name */
+    font-size: 1em;
   }
 }
