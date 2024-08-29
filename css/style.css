@@ -2,7 +2,6 @@
   font-size: 60px;
   font-weight: 800;
   color:white;
-
 }
 
 .cardContainer {
@@ -64,4 +63,39 @@
   font-size: 1.2em; 
   text-align: center;
   color: #333; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  #apptitle {
+    font-size: 30px;
+    text-align: center; /* Center title on mobile */
+  }
+
+  .cardContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Stack cards vertically on small screens */
+    gap: 20px; /* Reduce gap between cards */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .card {
+    padding: 15px; /* Reduce padding inside cards */
+  }
+
+  .card-image {
+    height: 150px; /* Reduce image height */
+  }
+
+  .card h3 {
+    font-size: 1.2em; /* Adjust title font size */
+  }
+
+  .card year,
+  .card length {
+    font-size: 0.8em; /* Adjust text font size */
+  }
+
+  .card songname {
+    font-size: 1em; /* Adjust font size for song name */
+  }
 }
